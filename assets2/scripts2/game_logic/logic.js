@@ -96,18 +96,46 @@ if ( $("#oneA").hasClass('o') && $("#twoA").hasClass('o') && $("#threeA").hasCla
 
 */
 
+// let sum = function(a, b) {
+//   let result = (a + b);
+//   return result;
+// };
+//
+// sum();
+
 const glowBall = require('./global.js');
 
+const turnCount = function() {
+  return glowBall.vars.board.length;
+};
+// turnCount();
 
 let gb = glowBall.vars.board;
 
 const gameWins = function() {
-// HORIZONTAL WINS
-  if (gb[0] === gb[1]) {
-      $('modal_Xwins').show();
-      // console.log('Win');
+  if ( (gb[0] === gb[1] && gb[2] === gb[0] && !!gb[0] ) ||  // HORIZONTAL WINS
+       (gb[3] === gb[4] && gb[5] === gb[3] && !!gb[3] ) ||  // HORIZONTAL WINS
+       (gb[6] === gb[7] && gb[8] === gb[6] && !!gb[6] ) ||  // HORIZONTAL WINS
+
+       (gb[0] === gb[3] && gb[6] === gb[0] && !!gb[0] ) ||  // VERTICAL WINS
+       (gb[1] === gb[4] && gb[7] === gb[1] && !!gb[1] ) ||  // VERTICAL WINS
+       (gb[2] === gb[5] && gb[8] === gb[2] && !!gb[2] ) ||  // VERTICAL WINS
+
+       (gb[0] === gb[4] && gb[8] === gb[0] && !!gb[0] ) ||  // DIAGNOL WINS
+       (gb[6] === gb[4] && gb[2] === gb[6] && !!gb[6] )) {  // DIAGNOL WINS
+// Tests for win conditions and then determines whose turn it is
+
+     if(glowBall.vars.xTurn){
+        $('#modal_Xwins').modal('show');
+    }
+      if(!glowBall.vars.xTurn){
+        $('#modal_Owins').modal('show');
+    }
+
+    } else if (turnCount() === 9) {
+      $('#modal_Tie').modal('show');
   }
-}
+};
 
 
 const onClick = function (event) {
@@ -120,21 +148,37 @@ const onClick = function (event) {
   console.log(i);
 
   if (glowBall.vars.xTurn) { // if xTurn is true (currently always is) the palce X in boxId
+    $(boxId).addClass('.box_x');
     $(boxId).html('X');
     glowBall.vars.board[i] = 'x'; // (board = empty array) if xTurn is true, add value of x to array value
+
   } else {
+    $(boxId).addClass('.box_o');
     $(boxId).html('O');  // if xTurn is boolean anything else (false), put 'O' in boxId
     glowBall.vars.board[i] = 'o'; // and add value of 'o' to array
                                   // but currently xTurn is always true, so how do we make it false?
   }
 
-// Switches turns between X and O
+// glowBall.vars.turnCount = i++ ;
+
+gameWins();
+
+  // Switches turns between X and O
   glowBall.vars.xTurn = !glowBall.vars.xTurn; // gives xTurn the opposite boolean value (which is now false) making previous else statement work
 
   console.table(glowBall.vars.board);
 
-  gameWins();
 };
+
+
+const onReset = function(event) {
+  event.preventDefault();
+
+  $('.box').html('');
+  $('.box').removeClass('.box_x', '.box_o');
+};
+
+
 
 const addHandlers = () => {
   $('#box0').on('click', onClick);
@@ -146,6 +190,11 @@ const addHandlers = () => {
   $('#box6').on('click', onClick);
   $('#box7').on('click', onClick);
   $('#box8').on('click', onClick);
+
+  $('#reset_X').on('submit', onReset);
+  $('#reset_O').on('submit', onReset);
+  $('#reset_Tie').on('submit', onReset);
+  $('#reset_Board').on('submit', onReset);
 };
 
 module.exports = {
