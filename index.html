@@ -13,46 +13,12 @@
     </head>
     <body class="container-fluid">
 
-<!--NAV STARTS HERE -->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Developed by Adam Kadane</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <form class="navbar-form navbar-left">
-            <div class="form-group"></div>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
-<!--NAV ends HERE -->
-
-
-
-      <h1>Title Goes Here</h1>
+<div class="title_wrapper">
+  <div class="title1">Tic Tac Bro #</div>
+  <div class="title2">Tic Tac Bro #</div>
+  <img src="http://i.imgur.com/hfBByNc.png" alt=logo>
+  <p>Developed by Adam Kadane</p>
+</div>
 
 <!--DROPDOWN STARTS HERE -->
          <div class="dropdown_wrapper">
@@ -156,23 +122,23 @@
 
       <div id="game_board">
           <div class="row article" id="row">
-            <div id="box0" class="col-xs-4 col-md-4 box">oneA</div>
-            <div id="box1" class="col-xs-4 col-md-4 box">twoA</div>
-            <div id="box2" class="col-xs-4 col-md-4 box">threeA</div>
+            <div id="box0" class="col-xs-4 col-md-4 box"></div>
+            <div id="box1" class="col-xs-4 col-md-4 box"></div>
+            <div id="box2" class="col-xs-4 col-md-4 box"></div>
           </div>
           <div class="row article" id="row">
-            <div id="box3" class="col-xs-4 col-md-4 box">oneB</div>
-            <div id="box4" class="col-xs-4 col-md-4 box">twoB</div>
-            <div id="box5" class="col-xs-4 col-md-4 box">threeB</div>
+            <div id="box3" class="col-xs-4 col-md-4 box"></div>
+            <div id="box4" class="col-xs-4 col-md-4 box"></div>
+            <div id="box5" class="col-xs-4 col-md-4 box"></div>
           </div>
           <div class="row article" id="row">
-            <div id="box6" class="col-xs-4 col-md-4 box">oneC</div>
-            <div id="box7" class="col-xs-4 col-md-4 box">.twoC</div>
-            <div id="box8" class="col-xs-4 col-md-4 box">threeC</div>
+            <div id="box6" class="col-xs-4 col-md-4 box"></div>
+            <div id="box7" class="col-xs-4 col-md-4 box"></div>
+            <div id="box8" class="col-xs-4 col-md-4 box"></div>
           </div>
       </div>
 
-          <button class="reset" name="subject" type="submit" value="HTML">RESET</button>
+          <button id ="reset_Board" class="reset" name="subject" type="submit" value="HTML">RESET</button>
 
 
 
@@ -185,7 +151,7 @@
                   <h4 class="modal-title">O WINS BRO</h4>
                 </div>
                 <div class="modal-body"> Nice Game! Click "Reset" to Play Again
-                  <button type="submit" class="btn btn-primary" id="reset_X">Reset</button>
+                  <button type="submit" class="btn btn-primary" id="reset_O">Reset</button>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -201,14 +167,14 @@
                   <h4 class="modal-title">X WINS BRO</h4>
                 </div>
                 <div class="modal-body"> Nice Game! Click "Reset" to Play Again
-                  <button type="submit" class="btn btn-primary" id="reset_O">Reset</button>
+                  <button type="submit" class="btn btn-primary" id="reset_X">Reset</button>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
           <!--MODAL #5 ENDS HERE ** X WINS-->
 
-          <!--MODAL #6 STARTS HERE ** X WINS -->
+          <!--MODAL #6 STARTS HERE ** Tie WINS -->
           <div id="modal_Tie" class="modal fade" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -217,12 +183,12 @@
                   <h4 class="modal-title">IT'S A TIE BRO</h4>
                 </div>
                 <div class="modal-body"> Nice TRY! Click "Reset" to Play Again
-                  <button type="submit" class="btn btn-primary" id="reset_O">Reset</button>
+                  <button type="submit" class="btn btn-primary" id="reset_Tie">Reset</button>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
-          <!--MODAL #6 ENDS HERE ** X WINS-->
+          <!--MODAL #6 ENDS HERE ** Tie WINS-->
 
     </body>
 </html>

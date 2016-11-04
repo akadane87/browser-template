@@ -141,7 +141,6 @@ const gameWins = function() {
 const onClick = function (event) {
   event.preventDefault();
 
-
   let box = $(this).attr('id'); // plugs in id and returns string
   let boxId = '#' + box;        // ads # to previous id defintion
   let i = +(box.replace(/\D/g, '')); // removes letters from string & +returns integer
@@ -170,17 +169,8 @@ gameWins();
 
 };
 
-
-const onReset = function(event) {
-  event.preventDefault();
-
-  $('.box').html('');
-  $('.box').removeClass('.box_x', '.box_o');
-};
-
-
-
 const addHandlers = () => {
+  //Game Board Click Events
   $('#box0').on('click', onClick);
   $('#box1').on('click', onClick);
   $('#box2').on('click', onClick);
@@ -191,12 +181,23 @@ const addHandlers = () => {
   $('#box7').on('click', onClick);
   $('#box8').on('click', onClick);
 
-  $('#reset_X').on('submit', onReset);
-  $('#reset_O').on('submit', onReset);
-  $('#reset_Tie').on('submit', onReset);
-  $('#reset_Board').on('submit', onReset);
+  // Reset Buttons Click Events
+$( "#reset_X" ).click(function() {
+  $( ".box" ).empty();
+});
+$( "#reset_O" ).click(function() {
+  $( ".box" ).empty();
+});
+$( "#reset_Tie" ).click(function() {
+  $( ".box" ).empty();
+});
+$( "#reset_Board" ).click(function() {
+  $( ".box" ).empty();
+});
+
 };
 
 module.exports = {
   addHandlers,
+  // onReset,
 };
