@@ -150,8 +150,11 @@ webpackJsonp([0],[
 
 	'use strict';
 
+	var app = {};
+
 	module.exports = {
-	  host: 'https://aqueous-atoll-85096.herokuapp.com/'
+	  host: 'https://aqueous-atoll-85096.herokuapp.com/',
+	  app: app
 	};
 
 /***/ },
@@ -431,14 +434,8 @@ webpackJsonp([0],[
 	  console.table(glowBall.vars.board);
 	};
 
-	var onReset = function onReset(event) {
-	  event.preventDefault();
-
-	  $('.box').html('');
-	  $('.box').removeClass('.box_x', '.box_o');
-	};
-
 	var addHandlers = function addHandlers() {
+	  //Game Board Click Events
 	  $('#box0').on('click', onClick);
 	  $('#box1').on('click', onClick);
 	  $('#box2').on('click', onClick);
@@ -449,10 +446,19 @@ webpackJsonp([0],[
 	  $('#box7').on('click', onClick);
 	  $('#box8').on('click', onClick);
 
-	  $('#reset_X').on('submit', onReset);
-	  $('#reset_O').on('submit', onReset);
-	  $('#reset_Tie').on('submit', onReset);
-	  $('#reset_Board').on('submit', onReset);
+	  // Reset Buttons Click Events
+	  $("#reset_X").click(function () {
+	    $(".box").empty();
+	  });
+	  $("#reset_O").click(function () {
+	    $(".box").empty();
+	  });
+	  $("#reset_Tie").click(function () {
+	    $(".box").empty();
+	  });
+	  $("#reset_Board").click(function () {
+	    $(".box").empty();
+	  });
 	};
 
 	module.exports = {
