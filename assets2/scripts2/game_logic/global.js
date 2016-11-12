@@ -2,9 +2,11 @@
 
 const vars = {
   xTurn: true,
-  // turnCount: 0,
-  // gameOver: false,
+  turnCount: 0,
+  gameOver: false,
   board: [],
+  // boardIndex: 0,
+  boardValue: '',
 
 };
 

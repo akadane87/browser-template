@@ -1,10 +1,10 @@
 'use strict';
 
-const app = require('assets2/scripts2/app.js');
+const app = require('../app.js');
 
 const success = (data) => {
   app.game = data.game;
-  console.log(data);
+  console.log('success');
 };
 
 const updateSuccess = (data) => {
@@ -14,7 +14,7 @@ const updateSuccess = (data) => {
 
 
 const fail = (error) => {
-  console.error(error);
+  console.error('fail');
 };
 
 

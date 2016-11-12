@@ -1,9 +1,10 @@
 'use strict';
 
-const gameEvents = require('./events_game.js');
+// const gameEvents = require('./events_game.js');
 const app = require('../app.js');
 
-const getAllGames = function(){
+const getAllGames = function() {
+  console.log('getAllGames');
   return $.ajax({
     url: app.host + '/games',
     method: 'GET',
@@ -13,6 +14,7 @@ const getAllGames = function(){
 
 
 const createGame = function() {
+  console.log('createGame');
   return $.ajax({
     url: app.host + '/games',
     method: 'POST',
@@ -24,15 +26,17 @@ const createGame = function() {
 };
 
 
-const updateGame = (data) =>
- $.ajax({
-    url: app.host + '/games/', + app.user.id,
+const updateGame = function (data) {
+  console.log('updateGame');
+  return $.ajax({
+    url: app.host + '/games/' + app.user.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,
-  },
-  data,
-});
+    },
+    data,
+  });
+};
 
 module.exports = {
   getAllGames,

@@ -96,14 +96,9 @@ if ( $("#oneA").hasClass('o') && $("#twoA").hasClass('o') && $("#threeA").hasCla
 
 */
 
-// let sum = function(a, b) {
-//   let result = (a + b);
-//   return result;
-// };
-//
-// sum();
 
 const glowBall = require('./global.js');
+const onUpdateGame = require('../game_api/events_game.js');
 
 const turnCount = function() {
   return glowBall.vars.board.length;
@@ -127,13 +122,19 @@ const gameWins = function() {
 
      if(glowBall.vars.xTurn){
         $('#modal_Xwins').modal('show');
+        glowBall.vars.gameOver = true;
+        console.log('game over');
     }
       if(!glowBall.vars.xTurn){
         $('#modal_Owins').modal('show');
+        glowBall.vars.gameOver = true;
+        console.log('game over');
     }
 
-    } else if (turnCount() === 9) {
-      $('#modal_Tie').modal('show');
+    } else if (glowBall.vars.turnCount === 9) {
+        $('#modal_Tie').modal('show');
+        glowBall.vars.gameOver = true;
+        console.log('game over');
   }
 };
 
@@ -146,16 +147,19 @@ const onClick = function (event) {
   let i = +(box.replace(/\D/g, '')); // removes letters from string & +returns integer
   console.log(i);
 
-  if (glowBall.vars.xTurn) { // if xTurn is true (currently always is) the palce X in boxId
-    $(boxId).addClass('.box_x');
+  if (glowBall.vars.xTurn) { // if xTurn is true (currently always is: defined glowBally) then place X in boxId
     $(boxId).html('X');
+    $(boxId).addClass('.box_x');
     glowBall.vars.board[i] = 'x'; // (board = empty array) if xTurn is true, add value of x to array value
+    glowBall.vars.boardValue = 'x'; // not the index but the value to be targeted and appended into data
+    onUpdateGame();
 
   } else {
     $(boxId).addClass('.box_o');
     $(boxId).html('O');  // if xTurn is boolean anything else (false), put 'O' in boxId
-    glowBall.vars.board[i] = 'o'; // and add value of 'o' to array
-                                  // but currently xTurn is always true, so how do we make it false?
+    glowBall.vars.board[i] = 'o'; // and add value of 'o' to array   // but currently xTurn is always true, so how do we make it false?
+    glowBall.vars.boardValue = 'o';  // not the index but the value to be targeted and appended into data
+    onUpdateGame();
   }
 
 // glowBall.vars.turnCount = i++ ;
