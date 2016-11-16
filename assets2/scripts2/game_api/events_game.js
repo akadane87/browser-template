@@ -17,12 +17,12 @@ const onCreateGame = function(event){
   console.log('onCreateGame');
   event.preventDefault();
   api.createGame()
-  .then(ui.getGamesuccess)
+  .then(ui.createGameSuccess)
   .fail(ui.fail);
 };
 
 const onUpdateGame = function(){
-  console.log('onUpdateGame');
+debugger;
   let data = {
     "game": {
     "cell": {
@@ -30,9 +30,10 @@ const onUpdateGame = function(){
       "value": glowBall.vars.boardValue,
     },
       "over": glowBall.vars.gameOver,
-  },
-};
-    api.updateGame(data)
+    },
+  };
+  console.log('inside onUpdateGame data is', data);
+  api.updateGame(data)
     .then(ui.Updatesuccess)
     .fail(ui.fail);
 };

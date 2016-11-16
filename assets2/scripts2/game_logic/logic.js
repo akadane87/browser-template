@@ -98,7 +98,7 @@ if ( $("#oneA").hasClass('o') && $("#twoA").hasClass('o') && $("#threeA").hasCla
 
 
 const glowBall = require('./global.js');
-const onUpdateGame = require('../game_api/events_game.js');
+const events_game = require('../game_api/events_game.js');
 
 const turnCount = function() {
   return glowBall.vars.board.length;
@@ -152,14 +152,14 @@ const onClick = function (event) {
     $(boxId).addClass('.box_x');
     glowBall.vars.board[i] = 'x'; // (board = empty array) if xTurn is true, add value of x to array value
     glowBall.vars.boardValue = 'x'; // not the index but the value to be targeted and appended into data
-    onUpdateGame();
+    events_game.onUpdateGame();
 
   } else {
     $(boxId).addClass('.box_o');
     $(boxId).html('O');  // if xTurn is boolean anything else (false), put 'O' in boxId
     glowBall.vars.board[i] = 'o'; // and add value of 'o' to array   // but currently xTurn is always true, so how do we make it false?
     glowBall.vars.boardValue = 'o';  // not the index but the value to be targeted and appended into data
-    onUpdateGame();
+    events_game.onUpdateGame();
   }
 
 // glowBall.vars.turnCount = i++ ;

@@ -14,12 +14,24 @@ const updateSuccess = (data) => {
 
 
 const fail = (error) => {
-  console.error('fail');
+  console.error(error);
+};
+
+// const getGamesuccess = (data) => {
+//   app.game = data.game;
+//   console.log(data);
+// };
+
+const createGameSuccess = (data) => {
+  app.game = data.game;
+  console.log("create game data is ", data);
+  console.log("create game app.game is ", app.game);
 };
 
 
 module.exports = {
   success,
+  createGameSuccess,
   updateSuccess,
   fail,
 };

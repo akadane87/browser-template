@@ -6,6 +6,7 @@ const app = require('../app.js');
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(app);
+  debugger;
 };
 
 //remove me before code-along

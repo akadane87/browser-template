@@ -15,21 +15,22 @@ const getAllGames = function() {
 
 const createGame = function() {
   console.log('createGame');
+  debugger;
   return $.ajax({
     url: app.host + '/games',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    game: {},
   });
 };
 
 
 const updateGame = function (data) {
-  console.log('updateGame');
+  console.log('inside updateGame data is', data);
+  debugger;
   return $.ajax({
-    url: app.host + '/games/' + app.user.id,
+    url: app.host + '/games/' + app.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token,

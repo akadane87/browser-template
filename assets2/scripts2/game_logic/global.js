@@ -5,7 +5,7 @@ const vars = {
   turnCount: 0,
   gameOver: false,
   board: [],
-  // boardIndex: 0,
+  boardIndex: 0,
   boardValue: '',
 
 };
