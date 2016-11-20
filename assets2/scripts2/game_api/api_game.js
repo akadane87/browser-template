@@ -15,7 +15,7 @@ const getAllGames = function() {
 
 const createGame = function() {
   console.log('createGame');
-  debugger;
+  // debugger;
   return $.ajax({
     url: app.host + '/games',
     method: 'POST',
@@ -28,7 +28,7 @@ const createGame = function() {
 
 const updateGame = function (data) {
   console.log('inside updateGame data is', data);
-  debugger;
+  // debugger;
   return $.ajax({
     url: app.host + '/games/' + app.game.id,
     method: 'PATCH',

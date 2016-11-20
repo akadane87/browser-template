@@ -6,10 +6,10 @@ const vars = {
   gameOver: false,
   board: [],
   boardIndex: 0,
-  boardValue: '',
-
+  boardValue: ''
 };
+window.glob = vars;
 
 module.exports = {
-  vars,
+  vars
 };

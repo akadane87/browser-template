@@ -22,7 +22,6 @@ const onCreateGame = function(event){
 };
 
 const onUpdateGame = function(){
-debugger;
   let data = {
     "game": {
     "cell": {
@@ -40,6 +39,7 @@ debugger;
 
 const addEventHandlers = () => {
   $( "#create_game" ).on('click', onCreateGame);
+  // $('#game_board').hide();
 };
 
 module.exports = {

@@ -9,4 +9,5 @@ $(() => {
   authEvents.addHandlers();
   logicEvents.addHandlers();
   gameEvents.addEventHandlers();
+  $('#game_board').hide();
 });
