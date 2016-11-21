@@ -5,9 +5,9 @@ const ui = require('./ui_game.js');
 // const app = require('../app.js');
 const glowBall = require('../game_logic/global.js');
 
-const onGetAllGames = function(event){
+const onGetAllGames = function(){
   console.log('onGetAllGames');
-  event.preventDefault();
+  // event.preventDefault();
   api.getAllGames()
   .then(ui.getGamesuccess)
   .fail(ui.fail);
@@ -39,7 +39,7 @@ const onUpdateGame = function(){
 
 const addEventHandlers = () => {
   $( "#create_game" ).on('click', onCreateGame);
-  // $('#game_board').hide();
+  $( "#getAll_Games" ).on('click', onGetAllGames);
 };
 
 module.exports = {

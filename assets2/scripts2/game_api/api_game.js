@@ -3,12 +3,15 @@
 // const gameEvents = require('./events_game.js');
 const app = require('../app.js');
 
-const getAllGames = function() {
+const getAllGames = function(player_x) {
   console.log('getAllGames');
   return $.ajax({
     url: app.host + '/games',
     method: 'GET',
-    Authorization: 'Token token=' + app.user.token,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+    player_x,
   });
 };
 

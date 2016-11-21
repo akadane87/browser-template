@@ -20,6 +20,8 @@ const fail = (error) => {
 const getGamesuccess = (data) => {
   app.game = data.game;
   console.log(data);
+  $('.numGames_display').text(data.games.length + ' games played Bro');
+  console.log("get game success is ", data);
 };
 
 const createGameSuccess = (data) => {
@@ -35,4 +37,5 @@ module.exports = {
   createGameSuccess,
   updateSuccess,
   fail,
+  getGamesuccess,
 };
