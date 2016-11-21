@@ -44,7 +44,7 @@ const gameWins = function () {
       console.log('game over');
     }
 
-    } else if (gb.filter(e => e !== "").length === 9) { /// ?? ///
+    } else if (gb.filter(e => e !== "").length === 9) {
       $('#modal_Tie').modal('show');
       glowBall.vars.gameOver = true;
       $('#game_board').hide();
@@ -53,7 +53,7 @@ const gameWins = function () {
 };
 
 function getTurn(cells) {
-  return (cells.filter(e => e !== "").length % 2 === 0) /// ?? ///
+  return (cells.filter(e => e !== "").length % 2 === 0)
     ? "x"
     : "o";
 }
@@ -62,7 +62,7 @@ const onClick = function (event) {
   event.preventDefault();
   // if the target of the click (event.target) (the element that received the click)
   // is not emptyu - dont do anything
-  if ($(event.target).html() !== "") { /// ?? ///
+  if ($(event.target).html() !== "") {
     return;
   }
   //  getTurn is a fucntion that translates the state of the game cells to either

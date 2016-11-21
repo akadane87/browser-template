@@ -85,3 +85,16 @@ img {
   text-align: center;
 
 }
+
+.gameStat_wrapper{
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.numGames_display {
+  font-size: 24px;
+  font-style: oblique;
+  text-align: center;
+  color: black;
+}

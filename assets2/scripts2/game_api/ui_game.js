@@ -20,8 +20,8 @@ const fail = (error) => {
 const getGamesuccess = (data) => {
   app.game = data.game;
   console.log(data);
-  $('.numGames_display').text(data.games.length + ' games played Bro');
-  console.log("get game success is ", data);
+  $('.numGames_display').html(data.games.length + ' games played Bro');
+  console.log("get game success is ", data.games.length);
 };
 
 const createGameSuccess = (data) => {
