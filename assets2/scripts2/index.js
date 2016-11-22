@@ -10,4 +10,7 @@ $(() => {
   logicEvents.addHandlers();
   gameEvents.addEventHandlers();
   $('#game_board').hide();
+  $( ".gameStat_wrapper" ).hide();
+  $( "#create_game" ).hide();
+  $( "#sign-out" ).hide();
 });

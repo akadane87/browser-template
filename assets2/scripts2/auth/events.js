@@ -3,6 +3,7 @@
 const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields.js');
+const events_game = require('../game_api/events_game.js');
 
 const onSignUp = function(event){
   event.preventDefault();
@@ -22,8 +23,9 @@ const onSignIn = function(event){
 
 const onSignOut = function(event){
   event.preventDefault();
-  let data = getFormFields(event.target);
-  api.signOut(data)
+  events_game.resetGlobalState();
+  $('#game_board').hide();
+  api.signOut()
   .then(ui.signOutSuccess)
   .catch(ui.fail);
 };

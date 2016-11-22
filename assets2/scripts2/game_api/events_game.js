@@ -2,8 +2,16 @@
 
 const api = require('./api_game.js');
 const ui = require('./ui_game.js');
-// const logic = require('../game_logic/logic.js');
 const glowBall = require('../game_logic/global.js');
+
+function resetGlobalState() {
+  let fresh = new Array(9);
+  glowBall.vars.board = fresh.fill("");
+  $('.box_x').removeClass('box_x');
+  $('.box_o').removeClass('box_o');
+  $(".box").empty();
+  console.log(glowBall.vars.board);
+}
 
 const onGetAllGames = function(e){
   console.log('onGetAllGames');
@@ -16,12 +24,14 @@ const onGetAllGames = function(e){
 const onCreateGame = function(event){
   console.log('onCreateGame');
   event.preventDefault();
+  resetGlobalState();
   api.createGame()
   .then(ui.createGameSuccess)
   .fail(ui.fail);
 };
 
 const onUpdateGame = function(){
+  console.log("WE ARE IN UPDATE GAME");
   let data = {
     "game": {
     "cell": {
@@ -39,7 +49,6 @@ const onUpdateGame = function(){
 
 const addEventHandlers = () => {
   $( "#create_game" ).on('click', onCreateGame);
-  // $( "#create_game" ).on('click', logic.resetGlobalState);
   $( "#getAll_Games" ).on('click', onGetAllGames);
 };
 
@@ -48,4 +57,6 @@ module.exports = {
   onGetAllGames,
   onCreateGame,
   onUpdateGame,
+  resetGlobalState,
+
 };

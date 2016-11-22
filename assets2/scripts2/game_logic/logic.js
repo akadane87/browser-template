@@ -122,35 +122,36 @@ const addHandlers = () => {
   // $('#game_board').hide();
   $('.box').on('click', onClick);
 
-  // Reset Buttons Click Events
-  $("#reset_X").click(function () {
-    $(".box").empty();
-    resetGlobalState();
-    $('#game_board').show();
-    console.log(glowBall.vars.board);
-  });
-  $("#reset_O").click(function () {
-    $(".box").empty();
-    resetGlobalState();
-    $('#game_board').show();
-    console.log(glowBall.vars.board);
-  });
-  $("#reset_Tie").click(function () {
-    $(".box").empty();
-    resetGlobalState();
-    $('#game_board').show();
-    console.log(glowBall.vars.board);
-  });
-  $("#reset_Board").click(function () {
-    $(".box").empty();
-    resetGlobalState();
-    $('#game_board').show();
-    console.log(glowBall.vars.board);
-  });
-
-};
+//   // Reset Buttons Click Events
+//   $("#reset_X").click(function () {
+//     // $(".box").empty();
+//     // resetGlobalState();
+//     // $('#game_board').show();
+//     console.log(glowBall.vars.board);
+//   });
+//   $("#reset_O").click(function () {
+//     // $(".box").empty();
+//     // resetGlobalState();
+//     // $('#game_board').show();
+//     console.log(glowBall.vars.board);
+//   });
+//   $("#reset_Tie").click(function () {
+//     // $(".box").empty();
+//     // resetGlobalState();
+//     // $('#game_board').show();
+//     console.log(glowBall.vars.board);
+//   });
+//   // $("#reset_Board").click(function () {
+//   //   $(".box").empty();
+//   //   resetGlobalState();
+//   //   $('#game_board').show();
+//   //   console.log(glowBall.vars.board);
+//   // });
+//
+  };
 
 module.exports = {
   addHandlers,
   resetGlobalState,
+
 };

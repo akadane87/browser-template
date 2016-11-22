@@ -5,6 +5,17 @@ const app = require('../app.js');
 //remove me before code-along
 const signInSuccess = (data) => {
   app.user = data.user;
+  $( ".gameStat_wrapper" ).show();
+  $( "#create_game" ).show();
+  $( "#sign-out" ).show();
+  console.log(app);
+  // debugger;
+};
+
+const signOutSuccess = (data) => {
+  $( ".gameStat_wrapper" ).hide();
+  $( "#create_game" ).hide();
+  $( "#sign-out" ).hide();
   console.log(app);
   // debugger;
 };
@@ -31,6 +42,6 @@ module.exports = {
   failure,
   success,
   signInSuccess,
-  // signOutSuccess,
+  signOutSuccess,
   changePasswordSuccess
 };

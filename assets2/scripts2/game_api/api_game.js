@@ -3,7 +3,6 @@
 // const gameEvents = require('./events_game.js');
 const app = require('../app.js');
 
-window.app = app;
 
 const getAllGames = function(player_x) {
   console.log('getAllGames');
