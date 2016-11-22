@@ -52,6 +52,9 @@ let gameBoard = [a1, a2, a3,
 4. Test
 5. If time allows add style
 
+// Unsolved Promblems //
+Would like to have some animations on page load...but can't complain. 
+
 
 // User Stories //
 As a <type of user>, I want <some goal> so that <some reason>.
@@ -69,9 +72,6 @@ With the exception of a pop up registration page my whole game will be on one ve
 
 // Version Control //
 I plan to make a commit at every small goal/checked task on my to do list. If something works or I feel as tho I have made progress...then I make a commit.
-
-// Attempted Bonus //
-Hell no! I am already worried about getting the basics functional. I would like to be able to have users compete on seperate devices but I dont even know what that would look like. If I thought I had time or if it was doable, then Yes I would go for it but not holding my breath.
 
 
 // Technologie Used //

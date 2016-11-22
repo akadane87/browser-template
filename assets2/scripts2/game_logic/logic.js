@@ -35,20 +35,17 @@ const gameWins = function () {
       $('#modal_Xwins').modal('show');
       glowBall.vars.gameOver = true;
       $('#game_board').hide();
-      console.log('game over');
     }
     if (turn == "x") {
       $('#modal_Owins').modal('show');
       glowBall.vars.gameOver = true;
       $('#game_board').hide();
-      console.log('game over');
     }
 
     } else if (gb.filter(e => e !== "").length === 9) {
       $('#modal_Tie').modal('show');
       glowBall.vars.gameOver = true;
       $('#game_board').hide();
-      console.log('game over');
     }
 };
 
@@ -74,7 +71,6 @@ const onClick = function (event) {
   let boxId = '#' + box; // ads # to previous id defintion
 
   let i = +(box.replace(/\D/g, '')); // removes letters from string & +returns integer
-  console.log(i);
 
 // this  adds either 'box_x' or 'box_o' class to the clicked ID depending on the
 // the turn
@@ -86,7 +82,7 @@ const onClick = function (event) {
   glowBall.vars.board[i] = turn; // add value of 'o' to array   // but currently xTurn is always true, so how do we make it false?
 
   glowBall.vars.boardValue = turn; // not the index but the value to be targeted and appended into data
-  // debugger;
+
   events_game.onUpdateGame();
 
   // glowBall.vars.turnCount = i++ ;
@@ -105,7 +101,6 @@ function resetGlobalState() {
   glowBall.vars.board = fresh.fill("");
   $('.box_x').removeClass('box_x');
   $('.box_o').removeClass('box_o');
-  console.log(glowBall.vars.board);
 }
 
 const addHandlers = () => {
@@ -122,32 +117,7 @@ const addHandlers = () => {
   // $('#game_board').hide();
   $('.box').on('click', onClick);
 
-//   // Reset Buttons Click Events
-//   $("#reset_X").click(function () {
-//     // $(".box").empty();
-//     // resetGlobalState();
-//     // $('#game_board').show();
-//     console.log(glowBall.vars.board);
-//   });
-//   $("#reset_O").click(function () {
-//     // $(".box").empty();
-//     // resetGlobalState();
-//     // $('#game_board').show();
-//     console.log(glowBall.vars.board);
-//   });
-//   $("#reset_Tie").click(function () {
-//     // $(".box").empty();
-//     // resetGlobalState();
-//     // $('#game_board').show();
-//     console.log(glowBall.vars.board);
-//   });
-//   // $("#reset_Board").click(function () {
-//   //   $(".box").empty();
-//   //   resetGlobalState();
-//   //   $('#game_board').show();
-//   //   console.log(glowBall.vars.board);
-//   // });
-//
+
   };
 
 module.exports = {

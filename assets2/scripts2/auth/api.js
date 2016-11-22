@@ -6,7 +6,6 @@ const app = require('../app');
 //authApi.signUp(authUi.success, authUi.failure, data);
 
 const signUp = function(data){
-  console.log(data);
   return $.ajax({
     url: app.host + '/sign-up/',
     method: 'POST',
@@ -15,7 +14,6 @@ const signUp = function(data){
 };
 
 const signIn = function(data){
-  console.log(data);
   return $.ajax({
     url: app.host + '/sign-in/',
     method: 'POST',

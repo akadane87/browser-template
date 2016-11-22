@@ -10,11 +10,9 @@ function resetGlobalState() {
   $('.box_x').removeClass('box_x');
   $('.box_o').removeClass('box_o');
   $(".box").empty();
-  console.log(glowBall.vars.board);
 }
 
 const onGetAllGames = function(e){
-  console.log('onGetAllGames');
   e.preventDefault();
   api.getAllGames()
   .then(ui.getGamesuccess)
@@ -22,7 +20,6 @@ const onGetAllGames = function(e){
 };
 
 const onCreateGame = function(event){
-  console.log('onCreateGame');
   event.preventDefault();
   resetGlobalState();
   api.createGame()
@@ -31,7 +28,6 @@ const onCreateGame = function(event){
 };
 
 const onUpdateGame = function(){
-  console.log("WE ARE IN UPDATE GAME");
   let data = {
     "game": {
     "cell": {
@@ -41,7 +37,6 @@ const onUpdateGame = function(){
       "over": glowBall.vars.gameOver,
     },
   };
-  console.log('inside onUpdateGame data is', data);
   api.updateGame(data)
     .then(ui.Updatesuccess)
     .fail(ui.fail);
