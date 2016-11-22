@@ -29,6 +29,11 @@ You may want to submit pictures for your wireframes and/or user stories.
 has instructions to link to a picture you've uploaded to a service like [Imgur]
 (http://imgur.com/).
 
+
+//// LINK TO GAME ////
+https://akadane87.github.io/tic-tac-bro/
+
+
 // Wire Frame //
 <img src="http://i.imgur.com/Pq84IrX.jpg" alt="My Wire Frames" height="860px" width="700px">
 
