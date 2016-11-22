@@ -2,12 +2,12 @@
 
 const api = require('./api_game.js');
 const ui = require('./ui_game.js');
-// const app = require('../app.js');
+// const logic = require('../game_logic/logic.js');
 const glowBall = require('../game_logic/global.js');
 
-const onGetAllGames = function(){
+const onGetAllGames = function(e){
   console.log('onGetAllGames');
-  // event.preventDefault();
+  e.preventDefault();
   api.getAllGames()
   .then(ui.getGamesuccess)
   .fail(ui.fail);
@@ -39,6 +39,7 @@ const onUpdateGame = function(){
 
 const addEventHandlers = () => {
   $( "#create_game" ).on('click', onCreateGame);
+  // $( "#create_game" ).on('click', logic.resetGlobalState);
   $( "#getAll_Games" ).on('click', onGetAllGames);
 };
 

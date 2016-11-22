@@ -86,6 +86,7 @@ const onClick = function (event) {
   glowBall.vars.board[i] = turn; // add value of 'o' to array   // but currently xTurn is always true, so how do we make it false?
 
   glowBall.vars.boardValue = turn; // not the index but the value to be targeted and appended into data
+  // debugger;
   events_game.onUpdateGame();
 
   // glowBall.vars.turnCount = i++ ;
@@ -151,4 +152,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
+  resetGlobalState,
 };

@@ -3,10 +3,12 @@
 // const gameEvents = require('./events_game.js');
 const app = require('../app.js');
 
+window.app = app;
+
 const getAllGames = function(player_x) {
   console.log('getAllGames');
   return $.ajax({
-    url: app.host + '/games',
+    url: app.host + '/games/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token,
@@ -18,7 +20,6 @@ const getAllGames = function(player_x) {
 
 const createGame = function() {
   console.log('createGame');
-  // debugger;
   return $.ajax({
     url: app.host + '/games',
     method: 'POST',
@@ -38,7 +39,7 @@ const updateGame = function (data) {
     headers: {
       Authorization: 'Token token=' + app.user.token,
     },
-    data,
+    data
   });
 };
 
