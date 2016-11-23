@@ -44,7 +44,7 @@
     letter-spacing: -2px;
 }
 
-p{
+.dev_by {
   color: cyan;
   font-size: 18px;
   float: right;
@@ -52,6 +52,12 @@ p{
   transform: skew(20deg, 0);
   bottom: 12px;
 }
+
+/*@media (min-width: 390px) {
+  .dev_by {
+    font-size: 12px;
+  }
+}*/
 
 img {
   width: 30px;

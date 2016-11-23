@@ -13,4 +13,6 @@ $(() => {
   $( ".gameStat_wrapper" ).hide();
   $( "#create_game" ).hide();
   $( "#sign-out" ).hide();
+  $( "#sign-out" ).hide();
+  $( "#change-password" ).hide();
 });
