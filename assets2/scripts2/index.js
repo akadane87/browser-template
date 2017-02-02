@@ -1,6 +1,6 @@
 'use strict';
 
-const authEvents = require('./auth/events.js');
+const authEvents = require('./auth/auth_events.js');
 const gameEvents = require('./game_api/events_game.js');
 const logicEvents = require('./game_logic/logic.js');
 
